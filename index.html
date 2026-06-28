@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Titans Softball &middot; LGBTQ+ Slow-Pitch &middot; Fort Lauderdale</title>
+<meta name="description" content="The Titans are an adult LGBTQ+ slow-pitch softball team based in Fort Lauderdale. Weeknight games, weekend tournaments, and a dugout that feels like family. Want to play? Get in touch.">
+<meta name="theme-color" content="#0a0a0b">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Titans Softball &middot; LGBTQ+ Slow-Pitch Softball">
+<meta property="og:description" content="Adult LGBTQ+ slow-pitch softball in Fort Lauderdale. Black &amp; red, pinstripes, and a lineup that shows up.">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA2NCA2NCc+PHJlY3Qgd2lkdGg9JzY0JyBoZWlnaHQ9JzY0JyByeD0nMTInIGZpbGw9JyMwYTBhMGInLz48cmVjdCB4PScxNScgeT0nMTMnIHdpZHRoPSc4JyBoZWlnaHQ9JzM4JyB0cmFuc2Zvcm09J3NrZXdYKC0xMiknIGZpbGw9JyNkMTFmMmEnLz48dGV4dCB4PSc0MCcgeT0nNDYnIGZvbnQtZmFtaWx5PSdBcmlhbCxIZWx2ZXRpY2Esc2Fucy1zZXJpZicgZm9udC13ZWlnaHQ9JzgwMCcgZm9udC1zaXplPSc0MCcgZmlsbD0nI2Y1ZjRmMScgdGV4dC1hbmNob3I9J21pZGRsZSc+VDwvdGV4dD48L3N2Zz4=">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0a0a0b;
+  --ink:#141416;
+  --chalk:#f5f4f1;
+  --steel:#9a9a9f;
+  --red:#d11f2a;
+  --red-dim:#a11820;
+  --line:rgba(245,244,241,0.10);
+  --rainbow:linear-gradient(90deg,#e40303,#ff8c00,#ffed00,#008026,#004dff,#750787);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{
+  background:var(--black);
+  color:var(--chalk);
+  font-family:'Inter',sans-serif;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,.display{font-family:'Oswald',sans-serif;letter-spacing:0.01em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+a{color:inherit;text-decoration:none}
+
+/* pinstripe motif */
+.pinstripe{
+  background-image:repeating-linear-gradient(
+    90deg,transparent 0,transparent 26px,
+    rgba(245,244,241,0.045) 26px,rgba(245,244,241,0.045) 27px);
+}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 28px;
+  background:rgba(10,10,11,0.72);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+nav::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--rainbow)}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Oswald';font-weight:700;font-size:20px;letter-spacing:0.06em}
+.brand .dot{width:9px;height:22px;background:var(--red);transform:skewX(-12deg)}
+.navlinks{display:flex;gap:30px;font-size:13px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;color:var(--steel)}
+.navlinks a{transition:color .2s}
+.navlinks a:hover{color:var(--chalk)}
+.menu-btn{display:none;background:none;border:0;color:var(--chalk);font-size:24px;cursor:pointer;line-height:1}
+@media(max-width:820px){
+  .menu-btn{display:block}
+  .navlinks{
+    position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;gap:0;
+    background:rgba(10,10,11,0.97);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+    max-height:0;overflow:hidden;
+    transition:max-height .3s ease;
+  }
+  nav.open .navlinks{max-height:360px}
+  .navlinks a{padding:16px 28px;border-top:1px solid var(--line);font-size:15px}
+}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--rainbow);z-index:3}
+.hero-img{position:absolute;inset:0;background-size:cover;background-position:center 28%;filter:grayscale(0.15) contrast(1.05)}
+.hero-img::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(10,10,11,0.55) 0%,rgba(10,10,11,0.2) 38%,rgba(10,10,11,0.92) 100%)}
+.hero-content{position:relative;z-index:2;padding-bottom:64px;width:100%}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--chalk);font-weight:600;margin-bottom:18px}
+.eyebrow::before{content:"";width:30px;height:2px;background:var(--red)}
+.hero h1{font-size:clamp(72px,16vw,200px);line-height:0.82;font-weight:700;text-transform:uppercase;margin-bottom:8px;
+  text-shadow:0 4px 40px rgba(0,0,0,0.5)}
+.hero h1 .red{color:var(--red)}
+.hero-sub{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center;margin-top:24px;font-size:15px;color:var(--steel);font-weight:500}
+.hero-sub b{color:var(--chalk);font-family:'Oswald';font-size:18px;letter-spacing:0.04em}
+.hero-sub .sep{width:5px;height:5px;background:var(--red);border-radius:50%}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.hero-cta .btn{padding:14px 26px;font-size:14px}
+
+/* SECTION SCAFFOLD */
+section{padding:96px 0;position:relative}
+.sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:48px}
+.sec-num{font-family:'Oswald';font-size:14px;color:var(--red);font-weight:600;letter-spacing:0.1em}
+.sec-head h2{font-size:clamp(34px,5vw,56px);text-transform:uppercase;font-weight:700;line-height:1}
+.sec-rule{flex:1;height:1px;background:var(--line);align-self:center}
+
+/* ABOUT */
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:start}
+.about p{font-size:18px;line-height:1.65;color:#d8d7d3;margin-bottom:20px}
+.about p:first-child{font-size:22px;color:var(--chalk);line-height:1.55}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.stat{background:var(--ink);padding:28px 24px}
+.stat .n{font-family:'Oswald';font-size:48px;font-weight:700;line-height:1;color:var(--chalk)}
+.stat .n span{color:var(--red)}
+.stat .l{font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--steel);margin-top:8px}
+@media(max-width:820px){.about{grid-template-columns:1fr;gap:36px}}
+
+/* SCHEDULE */
+.sched-intro{font-size:19px;line-height:1.6;color:#d8d7d3;max-width:760px;margin-bottom:34px}
+.sched-intro b{color:var(--chalk);font-family:'Oswald';font-weight:600;letter-spacing:0.02em}
+.sched-list{border-top:1px solid var(--line)}
+.game{display:grid;grid-template-columns:120px 1fr auto auto;gap:24px;align-items:center;
+  padding:22px 4px;border-bottom:1px solid var(--line);transition:background .2s,padding .2s}
+.game:hover{background:var(--ink);padding-left:18px}
+.game .date{font-family:'Oswald';font-weight:600;font-size:15px;letter-spacing:0.04em}
+.game .date .day{display:block;color:var(--red);font-size:12px;letter-spacing:0.14em}
+.game .opp{font-family:'Oswald';font-size:24px;font-weight:600;text-transform:uppercase}
+.game .opp .vs{color:var(--steel);font-size:14px;margin-right:10px}
+.game .loc{font-size:13px;color:var(--steel);text-align:right}
+.game .res{font-family:'Oswald';font-weight:700;font-size:16px;padding:5px 12px;letter-spacing:0.05em;min-width:74px;text-align:center}
+.res.w{color:#3ad17a;border:1px solid rgba(58,209,122,0.3)}
+.res.l{color:var(--steel);border:1px solid var(--line)}
+.res.up{color:var(--red);border:1px solid var(--red-dim)}
+@media(max-width:820px){
+  .game{grid-template-columns:auto 1fr;gap:6px 16px;row-gap:4px}
+  .game .loc{grid-column:2;text-align:left}
+  .game .res{grid-row:1;grid-column:2;justify-self:end}
+  .game .opp{grid-column:1/3}
+}
+
+/* ROSTER */
+.roster{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.player{background:var(--ink);padding:26px 22px;position:relative;transition:background .25s}
+.player:hover{background:#1c1c1f}
+.player .num{font-family:'Oswald';font-size:40px;font-weight:700;color:var(--red);line-height:0.9}
+.player .num .hash{font-size:0.5em;font-weight:600;vertical-align:0.55em;opacity:0.75;margin-right:1px}
+.player .pname{font-family:'Oswald';font-size:21px;font-weight:600;text-transform:uppercase;margin-top:14px}
+.player .pos{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--steel);margin-top:5px}
+@media(max-width:820px){.roster{grid-template-columns:repeat(2,1fr)}}
+
+/* EVENTS */
+.events{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,420px));gap:20px}
+.event{border:1px solid var(--line);padding:30px 26px;background:var(--ink);position:relative;overflow:hidden}
+.event::before{content:"";position:absolute;top:0;left:0;width:4px;height:100%;background:var(--red)}
+.event .etag{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--red);font-weight:600}
+.event h3{font-size:24px;text-transform:uppercase;margin:14px 0 8px;font-weight:600}
+.event .edate{font-family:'Oswald';font-size:15px;color:var(--chalk);font-weight:500;margin-bottom:12px}
+.event p{font-size:14px;line-height:1.6;color:var(--steel)}
+.event-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-weight:600;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;padding:12px 20px;cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .15s;border:1px solid transparent}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--red);color:var(--chalk)}
+.btn-primary:hover{background:var(--red-dim)}
+.btn-ghost{background:transparent;color:var(--chalk);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--red);color:var(--red)}
+.btn:focus-visible{outline:2px solid var(--chalk);outline-offset:2px}
+@media(max-width:820px){.events{grid-template-columns:1fr}}
+
+/* PHOTOS */
+.gallery{columns:3;column-gap:12px}
+.gallery .tile{
+  width:100%;height:auto;display:block;
+  margin:0 0 12px;break-inside:avoid;
+  border:1px solid var(--line);
+  filter:brightness(0.92);transition:filter .3s;
+}
+.gallery .tile:hover{filter:brightness(1)}
+@media(max-width:820px){.gallery{columns:2}}
+@media(max-width:520px){.gallery{columns:1}}
+
+/* SPONSORS */
+.spon-tier{font-family:'Oswald';font-size:13px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--red);margin:0 0 18px}
+.spon-tier:not(:first-of-type){margin-top:44px}
+.spon-title-card{display:flex;align-items:center;justify-content:center;gap:14px;min-height:170px;background:var(--ink);border:1px solid var(--line);text-align:center;padding:28px}
+.spon-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.spon-card{background:var(--ink);min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:26px 20px;text-align:center;transition:background .25s}
+.spon-card:hover{background:#1c1c1f}
+.spon-logo{width:48px;height:48px;border-radius:50%;border:1px dashed rgba(245,244,241,0.28);display:flex;align-items:center;justify-content:center;color:var(--steel);font-family:'Oswald';font-weight:700;font-size:20px}
+.spon-name{font-family:'Oswald';font-size:15px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--chalk)}
+.spon-note{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--steel)}
+.spon-cta{margin-top:40px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;border:1px solid var(--line);padding:28px 32px;background:var(--ink)}
+.spon-cta div{font-family:'Oswald';font-size:22px;font-weight:600;text-transform:uppercase;letter-spacing:0.02em}
+.spon-cta p{font-family:'Inter';font-size:14px;color:var(--steel);text-transform:none;font-weight:400;margin-top:6px;letter-spacing:0}
+@media(max-width:820px){.spon-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.spon-grid{grid-template-columns:1fr}}
+
+/* CONTACT / FOOTER */
+footer{border-top:3px solid var(--red);padding:72px 0 40px;margin-top:40px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:56px}
+.foot-brand{font-family:'Oswald';font-size:42px;font-weight:700;text-transform:uppercase;line-height:0.9}
+.foot-brand .red{color:var(--red)}
+.foot-brand p{font-family:'Inter';font-size:14px;color:var(--steel);margin-top:14px;font-weight:400;text-transform:none}
+.foot-col h4{font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--red);margin-bottom:16px;font-family:'Oswald';font-weight:600}
+.foot-col a,.foot-col p{display:block;font-size:15px;color:#d8d7d3;margin-bottom:10px;transition:color .2s}
+.foot-col a:hover{color:var(--chalk)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid var(--line);font-size:13px;color:var(--steel)}
+@media(max-width:820px){.foot-grid{grid-template-columns:1fr;gap:32px}.foot-bottom{flex-direction:column;gap:12px;text-align:center}}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="#top" class="brand"><span class="dot"></span>TITANS</a>
+  <div class="navlinks" onclick="this.closest('nav').classList.remove('open')">
+    <a href="#about">About</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#roster">Roster</a>
+    <a href="#events">Events</a>
+    <a href="#photos">Photos</a>
+    <a href="#sponsors">Sponsors</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <button class="menu-btn" aria-label="Menu" onclick="this.closest('nav').classList.toggle('open')">&#9776;</button>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-img" style="background-image:url('images/hero.jpg')"></div>
+  <div class="hero-content wrap pinstripe">
+    <span class="eyebrow">LGBTQ+ Softball Team</span>
+    <h1>Ti<span class="red">t</span>ans</h1>
+    <div class="hero-sub">
+      <b>EST. 2019</b><span class="sep"></span>
+      <span>Black &amp; red, pinstripes, and a lineup that shows up.</span>
+    </div>
+    <div class="hero-cta">
+      <a href="mailto:info@TitansFTL.com?subject=I%20want%20to%20play%20with%20the%20Titans" class="btn btn-primary">Want to play?</a>
+      <a href="#schedule" class="btn btn-ghost">See our schedule</a>
+    </div>
+  </div>
+</header>
+
+<section id="about" class="wrap">
+  <div class="sec-head"><span class="sec-num">01</span><h2>About the team</h2><span class="sec-rule"></span></div>
+  <div class="about reveal">
+    <div>
+      <p>The Titans are an adult slow-pitch LGBTQ+ softball team built on weekend games, tournaments, and a dugout that feels like family.</p>
+      <p>We play in the local rec league, take a few tournaments a season, and recruit by word of mouth. Some of us have been swinging since high school; some picked up a bat for the first time last spring. Everybody plays, everybody bats, nobody rides the bench.</p>
+      <p>Win or lose, we hang around after the last out. That part matters as much as the score.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n">16</div><div class="l">Roster strong</div></div>
+      <div class="stat"><div class="n">7<span>th</span></div><div class="l">Season</div></div>
+      <div class="stat"><div class="n">2<span>x</span></div><div class="l">League finals</div></div>
+      <div class="stat"><div class="n">1</div><div class="l">Dugout family</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="schedule" class="wrap">
+  <div class="sec-head"><span class="sec-num">02</span><h2>Road to Columbus</h2><span class="sec-rule"></span></div>
+  <p class="sched-intro reveal">We're headed to the <b>Gay Softball World Series</b> &mdash; the largest annual LGBTQ+ single-sport competition in the world. Fall 2026, Columbus, Ohio at Berliner Sports Park, Sep 1&ndash;5.</p>
+  <div class="sched-list reveal">
+    <div class="game">
+      <div class="date">SEP 01<span class="day">TUE</span></div>
+      <div class="opp"><span class="vs">vs</span>Pool Play · Day 1</div>
+      <div class="loc">Berliner Sports Park</div>
+      <div class="res up">GSWS</div>
+    </div>
+<div class="game">
+      <div class="date">SEP 02<span class="day">WED</span></div>
+      <div class="opp"><span class="vs">vs</span>Pool Play · Day 2</div>
+      <div class="loc">Berliner Sports Park</div>
+      <div class="res up">GSWS</div>
+    </div>
+<div class="game">
+      <div class="date">SEP 03<span class="day">THU</span></div>
+      <div class="opp"><span class="vs">vs</span>Bracket Play</div>
+      <div class="loc">Berliner Sports Park</div>
+      <div class="res up">GSWS</div>
+    </div>
+<div class="game">
+      <div class="date">SEP 04<span class="day">FRI</span></div>
+      <div class="opp"><span class="vs">vs</span>Friday Night Lights</div>
+      <div class="loc">Berliner Sports Park</div>
+      <div class="res up">GSWS</div>
+    </div>
+<div class="game">
+      <div class="date">SEP 05<span class="day">SAT</span></div>
+      <div class="opp"><span class="vs">vs</span>Championship Saturday</div>
+      <div class="loc">Berliner Sports Park</div>
+      <div class="res up">FINALS</div>
+    </div>
+  </section>
+
+<section id="roster" class="wrap">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Roster</h2><span class="sec-rule"></span></div>
+  <div class="roster reveal">
+    <div class="player">
+      <div class="num"><span class="hash">#</span>1</div>
+      <div class="pname">Renaldo</div>
+    </div>
+<div class="player">
+      <div class="num"><span class="hash">#</span>2</div>
+      <div class="pname">Ahkeem</div>
+    </div>
+<div class="player">
+      <div class="num"><span class="hash">#</span>5</div>
+      <div class="pname">Carlos</div>
+    </div>
+<div class="player">
+      <div class="num"><span class="hash">#</span>8</div>
+      <div class="pname">Chris</div>
+    </div>
+<div class="player">
+      <div class="num"><span class="hash">#</span>10</div>
+      <div class="pname">Jesse</div>
+    </div>
+<div class="player">
+      <div class="num"><span class="hash">#</span>11</div>
+      <div class="pname">Maikel</div>
+    </div>
+<div class="player">
+      <div class="num"><span class="hash">#</span>12</div>
+      <div class="pname">Keith</div>
+    </div>
+<div class="player">
+      <div class="num"><span class="hash">#</span>13</div>
+      <div class="pname">Neville</div>
+    </div>
+<div class="player">
+      <div class="num"><span class="hash">#</span>15</div>
+      <div class="pname">Jolynn</div>
+    </div>
+<div class="player">
+      <div class="num"><span class="hash">#</span>21</div>
+      <div class="pname">Matt</div>
+    </div>
+<div class="player">
+      <div class="num"><span class="hash">#</span>22</div>
+      <div class="pname">Brent</div>
+    </div>
+<div class="player">
+      <div class="num"><span class="hash">#</span>22</div>
+      <div class="pname">Julie</div>
+    </div>
+<div class="player">
+      <div class="num"><span class="hash">#</span>44</div>
+      <div class="pname">Erik</div>
+    </div>
+<div class="player">
+      <div class="num"><span class="hash">#</span>50</div>
+      <div class="pname">Jason</div>
+    </div>
+<div class="player">
+      <div class="num"><span class="hash">#</span>77</div>
+      <div class="pname">Mark</div>
+    </div>
+<div class="player">
+      <div class="num"><span class="hash">#</span>88</div>
+      <div class="pname">Jorge</div>
+    </div>
+  </section>
+
+<section id="events" class="wrap">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Events</h2><span class="sec-rule"></span></div>
+  <div class="events reveal">
+    <div class="event">
+      <span class="etag">Fundraiser</span>
+      <h3>Pool Party Fundraiser</h3>
+      <div class="edate">Sat &middot; July 25</div>
+      <p>Cool off and chip in &mdash; a poolside bash to raise money for the road to Columbus. Bring your crew; all are welcome.</p>
+      <div class="event-actions">
+        <a href="#" class="btn btn-primary">Get tickets</a>
+        <a href="#" class="btn btn-ghost">Can't make it? Donate</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="photos" class="wrap">
+  <!-- gallery: uncropped masonry, full photos -->
+  <div class="sec-head"><span class="sec-num">05</span><h2>Photos</h2><span class="sec-rule"></span></div>
+  <div class="gallery reveal">
+    <img class="tile big" src="images/gallery-01.jpg" alt="Titans softball" loading="lazy">
+    <img class="tile" src="images/gallery-02.jpg" alt="Titans softball" loading="lazy">
+    <img class="tile" src="images/gallery-03.jpg" alt="Titans softball" loading="lazy">
+    <img class="tile" src="images/gallery-04.jpg" alt="Titans softball" loading="lazy">
+    <img class="tile" src="images/gallery-05.jpg" alt="Titans softball" loading="lazy">
+    <img class="tile" src="images/gallery-06.jpg" alt="Titans softball" loading="lazy">
+    <img class="tile" src="images/gallery-07.jpg" alt="Titans softball" loading="lazy">
+    <img class="tile" src="images/gallery-08.jpg" alt="Titans softball" loading="lazy">
+    <img class="tile" src="images/gallery-09.jpg" alt="Titans softball" loading="lazy">
+    <img class="tile" src="images/gallery-10.jpg" alt="Titans softball" loading="lazy">
+    <img class="tile" src="images/gallery-11.jpg" alt="Titans softball" loading="lazy">
+  </div>
+</section>
+
+<section id="sponsors" class="wrap">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Sponsors</h2><span class="sec-rule"></span></div>
+
+  <!-- PLACEHOLDER SPONSORS — to add a real one, replace the <div class="spon-logo">..</div>
+       with: <img src="images/sponsor-name.png" alt="Sponsor name" style="max-width:120px;max-height:48px">
+       and wrap the card in an <a href="https://sponsor-website.com" target="_blank"> ... </a> -->
+
+  <div class="reveal">
+    <p class="spon-tier">Title Sponsor</p>
+    <div class="spon-title-card">
+      <span class="spon-logo">★</span>
+      <div>
+        <div class="spon-name">Your Logo Here</div>
+        <span class="spon-note">Title sponsorship available</span>
+      </div>
+    </div>
+
+    <p class="spon-tier">Team Sponsors</p>
+    <div class="spon-grid">
+      <div class="spon-card"><span class="spon-logo">T</span><span class="spon-name">Sponsor Name</span><span class="spon-note">Logo here</span></div>
+      <div class="spon-card"><span class="spon-logo">T</span><span class="spon-name">Sponsor Name</span><span class="spon-note">Logo here</span></div>
+      <div class="spon-card"><span class="spon-logo">T</span><span class="spon-name">Sponsor Name</span><span class="spon-note">Logo here</span></div>
+      <div class="spon-card"><span class="spon-logo">T</span><span class="spon-name">Sponsor Name</span><span class="spon-note">Logo here</span></div>
+    </div>
+
+    <p class="spon-tier">Supporters</p>
+    <div class="spon-grid">
+      <div class="spon-card"><span class="spon-logo">+</span><span class="spon-name">Supporter</span></div>
+      <div class="spon-card"><span class="spon-logo">+</span><span class="spon-name">Supporter</span></div>
+      <div class="spon-card"><span class="spon-logo">+</span><span class="spon-name">Supporter</span></div>
+      <div class="spon-card"><span class="spon-logo">+</span><span class="spon-name">Supporter</span></div>
+    </div>
+
+    <div class="spon-cta">
+      <div>Want to support the Titans?<p>Get your business in front of the team and our community. Flexible sponsorship tiers available.</p></div>
+      <a href="mailto:info@TitansFTL.com?subject=Titans%20Sponsorship" class="btn btn-primary">Become a sponsor</a>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">TI<span class="red">T</span>ANS<p>Adult slow-pitch softball. Built on weeknights and weekend tournaments.</p></div>
+      <div class="foot-col">
+        <h4>Get in touch</h4>
+        <a href="mailto:info@TitansFTL.com">info@TitansFTL.com</a>
+        <p>Coach &middot; Manager name</p>
+      </div>
+      <div class="foot-col">
+        <h4>Find us</h4>
+        <p>Home field &middot; Mill Pond Park</p>
+        <p>Fort Lauderdale, FL</p>
+        <a href="#">Instagram &middot; @titanssoftball</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Titans Softball</span>
+      <span>Black &amp; red &middot; pinstripes forever</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// reveal on scroll
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:0.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
