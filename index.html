@@ -199,6 +199,12 @@ section{padding:96px 0;position:relative}
 .spon-logo{width:48px;height:48px;border-radius:50%;border:1px dashed rgba(245,244,241,0.28);display:flex;align-items:center;justify-content:center;color:var(--steel);font-family:'Oswald';font-weight:700;font-size:20px}
 .spon-name{font-family:'Oswald';font-size:15px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--chalk)}
 .spon-note{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--steel)}
+.spon-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.spon-card2{background:var(--ink);border:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:22px;padding:30px 26px;text-align:center}
+.spon-card2-logo{width:100%;height:130px;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;padding:20px}
+.spon-card2-logo img{max-height:100%;max-width:100%;width:auto;display:block}
+.spon-card2-name{font-family:'Oswald';font-size:19px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--chalk)}
+.spon-card2 .btn{margin-top:auto;padding:11px 24px;font-size:12px}
 .spon-cta{margin-top:40px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;border:1px solid var(--line);padding:28px 32px;background:var(--ink)}
 .spon-cta div{font-family:'Oswald';font-size:22px;font-weight:600;text-transform:uppercase;letter-spacing:0.02em}
 .spon-cta p{font-family:'Inter';font-size:14px;color:var(--steel);text-transform:none;font-weight:400;margin-top:6px;letter-spacing:0}
@@ -413,31 +419,23 @@ footer{border-top:3px solid var(--red);padding:72px 0 40px;margin-top:40px}
 <section id="sponsors" class="wrap">
   <div class="sec-head"><span class="sec-num">06</span><h2>Sponsors</h2><span class="sec-rule"></span></div>
 
-  <!-- PLACEHOLDER SPONSORS — to add a real one, replace the <div class="spon-logo">..</div>
-       with: <img src="images/sponsor-name.png" alt="Sponsor name" style="max-width:120px;max-height:48px">
-       and wrap the card in an <a href="https://sponsor-website.com" target="_blank"> ... </a> -->
-
   <div class="reveal">
-    <p class="spon-tier">Title Sponsor</p>
-    <a href="https://PrideSportsUSA.com" target="_blank" rel="noopener" class="spon-title-card spon-title-link">
-      <img src="images/sponsor-psusa.png" alt="Pride Sports USA" class="spon-title-logo">
-      <span class="spon-title-name">Pride Sports USA</span>
-    </a>
-
-    <p class="spon-tier">Team Sponsors</p>
-    <div class="spon-grid">
-      <div class="spon-card"><img src="images/sponsor-next.png" alt="Next Bar &amp; Lounge" class="spon-card-logo invert"></div>
-      <div class="spon-card"><span class="spon-logo">T</span><span class="spon-name">Sponsor Name</span><span class="spon-note">Logo here</span></div>
-      <div class="spon-card"><span class="spon-logo">T</span><span class="spon-name">Sponsor Name</span><span class="spon-note">Logo here</span></div>
-      <div class="spon-card"><span class="spon-logo">T</span><span class="spon-name">Sponsor Name</span><span class="spon-note">Logo here</span></div>
-    </div>
-
-    <p class="spon-tier">Supporters</p>
-    <div class="spon-grid">
-      <div class="spon-card"><span class="spon-logo">+</span><span class="spon-name">Supporter</span></div>
-      <div class="spon-card"><span class="spon-logo">+</span><span class="spon-name">Supporter</span></div>
-      <div class="spon-card"><span class="spon-logo">+</span><span class="spon-name">Supporter</span></div>
-      <div class="spon-card"><span class="spon-logo">+</span><span class="spon-name">Supporter</span></div>
+    <div class="spon-cards">
+      <div class="spon-card2">
+        <div class="spon-card2-logo"><img src="images/sponsor-psusa.png" alt="Pride Sports USA"></div>
+        <h3 class="spon-card2-name">Pride Sports USA</h3>
+        <a href="https://PrideSportsUSA.com" target="_blank" rel="noopener" class="btn btn-ghost">Learn more</a>
+      </div>
+      <div class="spon-card2">
+        <div class="spon-card2-logo"><img src="images/sponsor-next.png" alt="Next Bar & Lounge"></div>
+        <h3 class="spon-card2-name">Next Bar &amp; Lounge</h3>
+        <a href="#sponsors" class="btn btn-ghost">Learn more</a>
+      </div>
+      <div class="spon-card2">
+        <div class="spon-card2-logo"><img src="images/sponsor-rosies.png" alt="Rosie's Bar & Grill"></div>
+        <h3 class="spon-card2-name">Rosie's Bar &amp; Grill</h3>
+        <a href="#sponsors" class="btn btn-ghost">Learn more</a>
+      </div>
     </div>
 
     <div class="spon-cta">
