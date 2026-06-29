@@ -104,6 +104,7 @@ nav::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;backg
 
 /* SECTION SCAFFOLD */
 section{padding:96px 0;position:relative}
+section.wrap{padding-top:96px;padding-bottom:96px}
 .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:48px}
 .sec-num{font-family:'Oswald';font-size:14px;color:var(--red);font-weight:600;letter-spacing:0.1em}
 .sec-head h2{font-size:clamp(34px,5vw,56px);text-transform:uppercase;font-weight:700;line-height:1}
@@ -172,16 +173,15 @@ section{padding:96px 0;position:relative}
 @media(max-width:820px){.events{grid-template-columns:1fr}}
 
 /* PHOTOS */
-.gallery{columns:3;column-gap:12px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .gallery .tile{
-  width:100%;height:auto;display:block;
-  margin:0 0 12px;break-inside:avoid;
+  width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;display:block;
   border:1px solid var(--line);
   filter:brightness(0.92);transition:filter .3s;
 }
 .gallery .tile:hover{filter:brightness(1)}
-@media(max-width:820px){.gallery{columns:2}}
-@media(max-width:520px){.gallery{columns:1}}
+@media(max-width:820px){.gallery{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.gallery{grid-template-columns:1fr}}
 
 /* SPONSORS */
 .spon-tier{font-family:'Oswald';font-size:13px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--red);margin:0 0 18px}
