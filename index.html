@@ -187,6 +187,9 @@ section{padding:96px 0;position:relative}
 .spon-tier{font-family:'Oswald';font-size:13px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--red);margin:0 0 18px}
 .spon-tier:not(:first-of-type){margin-top:44px}
 .spon-title-card{display:flex;align-items:center;justify-content:center;gap:14px;min-height:170px;background:var(--ink);border:1px solid var(--line);text-align:center;padding:28px}
+.spon-title-link{transition:border-color .25s,background .25s}
+.spon-title-link:hover{border-color:var(--red);background:#1c1c1f}
+.spon-title-logo{height:120px;width:auto;display:block}
 .spon-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
 .spon-card{background:var(--ink);min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:26px 20px;text-align:center;transition:background .25s}
 .spon-card:hover{background:#1c1c1f}
@@ -413,13 +416,9 @@ footer{border-top:3px solid var(--red);padding:72px 0 40px;margin-top:40px}
 
   <div class="reveal">
     <p class="spon-tier">Title Sponsor</p>
-    <div class="spon-title-card">
-      <span class="spon-logo">★</span>
-      <div>
-        <div class="spon-name">Your Logo Here</div>
-        <span class="spon-note">Title sponsorship available</span>
-      </div>
-    </div>
+    <a href="https://pridesportsusa.com" target="_blank" rel="noopener" class="spon-title-card spon-title-link">
+      <img src="images/sponsor-psusa.png" alt="Pride Sports USA" class="spon-title-logo">
+    </a>
 
     <p class="spon-tier">Team Sponsors</p>
     <div class="spon-grid">
