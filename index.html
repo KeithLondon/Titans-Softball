@@ -173,15 +173,16 @@ section.wrap{padding-top:96px;padding-bottom:96px}
 @media(max-width:820px){.events{grid-template-columns:1fr}}
 
 /* PHOTOS */
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gallery{columns:3;column-gap:12px}
 .gallery .tile{
-  width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;display:block;
+  width:100%;height:auto;display:block;
+  margin:0 0 12px;break-inside:avoid;
   border:1px solid var(--line);
   filter:brightness(0.92);transition:filter .3s;
 }
 .gallery .tile:hover{filter:brightness(1)}
-@media(max-width:820px){.gallery{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){.gallery{grid-template-columns:1fr}}
+@media(max-width:820px){.gallery{columns:2}}
+@media(max-width:520px){.gallery{columns:1}}
 
 /* SPONSORS */
 .spon-tier{font-family:'Oswald';font-size:13px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--red);margin:0 0 18px}
@@ -412,7 +413,6 @@ footer{border-top:3px solid var(--red);padding:72px 0 40px;margin-top:40px}
     <img class="tile" src="images/gallery-08.jpg" alt="Titans softball" loading="lazy">
     <img class="tile" src="images/gallery-09.jpg" alt="Titans softball" loading="lazy">
     <img class="tile" src="images/gallery-10.jpg" alt="Titans softball" loading="lazy">
-    <img class="tile" src="images/gallery-11.jpg" alt="Titans softball" loading="lazy">
   </div>
 </section>
 
