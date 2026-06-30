@@ -523,7 +523,7 @@ footer{border-top:3px solid var(--red);padding:72px 0 40px;margin-top:40px}
 
 <script>
 // reveal on scroll
-const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:0.15});
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:0,rootMargin:'0px 0px -50px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
 // Pool Party promo popup — shows once per visit, auto-off after 5:00 PM ET on July 25, 2026
