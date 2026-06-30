@@ -155,13 +155,18 @@ section.wrap{padding-top:64px;padding-bottom:64px}
 @media(max-width:820px){.roster{grid-template-columns:repeat(2,1fr)}}
 
 /* EVENTS */
-.events{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,420px));gap:20px}
+.events{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,600px));gap:20px}
 .event{border:1px solid var(--line);padding:30px 26px;background:var(--ink);position:relative;overflow:hidden}
-.event::before{content:"";position:absolute;top:0;left:0;width:4px;height:100%;background:var(--red)}
+.event::before{content:"";position:absolute;top:0;left:0;width:4px;height:100%;background:var(--red);z-index:1}
+.event--flyer{padding:0}
+.event-flyer{display:block;width:100%;height:auto}
+.event-body{padding:26px 28px 30px}
 .event .etag{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--red);font-weight:600}
 .event h3{font-size:24px;text-transform:uppercase;margin:14px 0 8px;font-weight:600}
 .event .edate{font-family:'Oswald';font-size:15px;color:var(--chalk);font-weight:500;margin-bottom:12px}
 .event p{font-size:14px;line-height:1.6;color:var(--steel)}
+.event-price{font-family:'Oswald';font-size:14px;letter-spacing:0.02em;color:var(--chalk);margin-top:14px}
+.event-price b{color:var(--red);font-weight:600}
 .event-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
 .btn{display:inline-flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-weight:600;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;padding:12px 20px;cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .15s;border:1px solid transparent}
 .btn:active{transform:translateY(1px)}
@@ -381,14 +386,18 @@ footer{border-top:3px solid var(--red);padding:72px 0 40px;margin-top:40px}
 <section id="events" class="wrap">
   <div class="sec-head"><span class="sec-num">04</span><h2>Events</h2><span class="sec-rule"></span></div>
   <div class="events reveal">
-    <div class="event">
-      <span class="etag">Fundraiser</span>
-      <h3>Pool Party Fundraiser</h3>
-      <div class="edate">Sat &middot; July 25</div>
-      <p>Cool off and chip in &mdash; a poolside bash to raise money for the road to Columbus. Bring your crew; all are welcome.</p>
-      <div class="event-actions">
-        <a href="mailto:info@TitansFTL.com?subject=Pool%20Party%20Fundraiser%20-%20Tickets" class="btn btn-primary">Get tickets</a>
-        <a href="https://www.paypal.com/ncp/payment/F2DBL9BWCDS2J" target="_blank" rel="noopener" class="btn btn-ghost">Can't make it? Donate</a>
+    <div class="event event--flyer">
+      <a href="https://www.eventbrite.com/e/titans-softball-world-series-pool-party-tickets-1992842126446?aff=oddtdtcreator" target="_blank" rel="noopener"><img src="images/pool-party-flyer.jpg" alt="Titans Softball Pool Party — Saturday July 25, 1–6PM, Wilton Manors FL" class="event-flyer" loading="lazy"></a>
+      <div class="event-body">
+        <span class="etag">Fundraiser</span>
+        <h3>Pool Party Fundraiser</h3>
+        <div class="edate">Sat, July 25 &middot; 1&ndash;6 PM &middot; 2125 NE 5th Ave, Wilton Manors, FL</div>
+        <p>Cool off and chip in &mdash; a poolside bash to raise money for the road to Columbus. Bring your crew; all are welcome.</p>
+        <div class="event-price"><b>Online:</b> $35 regular / $65 VIP &nbsp;&middot;&nbsp; <b>At the door:</b> $40 / $70 VIP</div>
+        <div class="event-actions">
+          <a href="https://www.eventbrite.com/e/titans-softball-world-series-pool-party-tickets-1992842126446?aff=oddtdtcreator" target="_blank" rel="noopener" class="btn btn-primary">Get tickets</a>
+          <a href="https://www.paypal.com/ncp/payment/F2DBL9BWCDS2J" target="_blank" rel="noopener" class="btn btn-ghost">Can't make it? Donate</a>
+        </div>
       </div>
     </div>
   </div>
