@@ -231,6 +231,17 @@ footer{border-top:3px solid var(--red);padding:72px 0 40px;margin-top:40px}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* PROMO POPUP */
+.promo-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(0,0,0,0.82);backdrop-filter:blur(4px)}
+.promo-modal.open{display:flex}
+.promo-box{position:relative;max-width:560px;width:100%;background:var(--ink);border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,0.6);animation:promoIn .3s ease}
+@keyframes promoIn{from{opacity:0;transform:translateY(16px) scale(0.98)}to{opacity:1;transform:none}}
+.promo-box img{display:block;width:100%;height:auto}
+.promo-cta{padding:18px;text-align:center}
+.promo-cta .btn{padding:13px 32px;font-size:14px}
+.promo-close{position:absolute;top:10px;right:10px;z-index:2;width:38px;height:38px;border-radius:50%;border:0;background:rgba(0,0,0,0.55);color:#fff;font-size:26px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.promo-close:hover{background:var(--red)}
 </style>
 </head>
 <body>
@@ -471,10 +482,38 @@ footer{border-top:3px solid var(--red);padding:72px 0 40px;margin-top:40px}
   </div>
 </footer>
 
+<!-- Pool Party promo popup (auto-expires after the event) -->
+<div id="promo-modal" class="promo-modal" role="dialog" aria-modal="true" aria-label="Titans Pool Party">
+  <div class="promo-box">
+    <button class="promo-close" data-close aria-label="Close">&times;</button>
+    <a href="https://www.eventbrite.com/e/titans-softball-world-series-pool-party-tickets-1992842126446?aff=oddtdtcreator" target="_blank" rel="noopener"><img src="images/pool-party-flyer.jpg" alt="Titans Softball Pool Party — Saturday July 25, 1–6PM, Wilton Manors FL"></a>
+    <div class="promo-cta">
+      <a href="https://www.eventbrite.com/e/titans-softball-world-series-pool-party-tickets-1992842126446?aff=oddtdtcreator" target="_blank" rel="noopener" class="btn btn-primary">Get tickets</a>
+    </div>
+  </div>
+</div>
+
 <script>
 // reveal on scroll
 const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:0.15});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// Pool Party promo popup — shows once per visit, auto-off after 5:00 PM ET on July 25, 2026
+(function(){
+  var cutoff = new Date('2026-07-25T17:00:00-04:00').getTime(); // 5 PM Eastern, July 25, 2026
+  if (Date.now() >= cutoff) return;                 // event has passed: never show again
+  if (sessionStorage.getItem('ppSeen')) return;     // already shown this visit
+  var modal = document.getElementById('promo-modal');
+  if (!modal) return;
+  function close(){ modal.classList.remove('open'); document.body.style.overflow=''; }
+  setTimeout(function(){
+    modal.classList.add('open');
+    document.body.style.overflow='hidden';
+    sessionStorage.setItem('ppSeen','1');
+  }, 700);
+  modal.addEventListener('click', function(e){ if(e.target===modal || e.target.closest('[data-close]')) close(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') close(); });
+})();
 </script>
 </body>
 </html>
