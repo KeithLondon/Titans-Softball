@@ -309,7 +309,7 @@ footer{border-top:3px solid var(--red);padding:72px 0 40px;margin-top:40px}
       <p>Win or lose, we hang around after the last out. That part matters as much as the score.</p>
     </div>
     <div class="stats">
-      <div class="stat"><div class="n">16</div><div class="l">Roster strong</div></div>
+      <div class="stat"><div class="n" id="roster-count">17</div><div class="l">Roster strong</div></div>
       <div class="stat"><div class="n">10<span>th</span></div><div class="l">Season</div></div>
       <div class="stat"><div class="n">2<span>x</span></div><div class="l">League finals</div></div>
       <div class="stat"><div class="n">1</div><div class="l">Dugout family</div></div>
@@ -529,6 +529,13 @@ footer{border-top:3px solid var(--red);padding:72px 0 40px;margin-top:40px}
 // reveal on scroll
 const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:0,rootMargin:'0px 0px -50px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// Keep "Roster strong" stat in sync with the actual number of players
+(function(){
+  var count = document.querySelectorAll('.roster .player').length;
+  var el = document.getElementById('roster-count');
+  if (el && count) el.textContent = count;
+})();
 
 // Pool Party promo popup — shows once per visit, auto-off after 5:00 PM ET on July 25, 2026
 (function(){
