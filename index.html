@@ -319,6 +319,17 @@ footer{border-top:3px solid var(--red);padding:72px 0 40px;margin-top:40px}
 <section id="events" class="wrap">
   <div class="sec-head"><span class="sec-num">02</span><h2>Events</h2><span class="sec-rule"></span></div>
   <div class="events reveal">
+    <div class="event" id="event-xmas-july">
+      <div class="event-body">
+        <span class="etag">Fundraiser</span>
+        <h3>Christmas in July</h3>
+        <div class="edate">Wed, July 22 &middot; 6&ndash;10 PM &middot; Next Bar &amp; Lounge, Wilton Manors</div>
+        <p>Ho ho in paradise &mdash; jello shots, sexy elves, pictures with Santa, a silent auction, and a 50/50 raffle. Come support the Titans on the road to the Gay Softball World Series!</p>
+        <div class="event-actions">
+          <a href="https://www.facebook.com/Nextbarandlounge/" target="_blank" rel="noopener" class="btn btn-ghost">Next Bar &amp; Lounge</a>
+        </div>
+      </div>
+    </div>
     <div class="event event--flyer">
       <a href="https://www.eventbrite.com/e/titans-softball-world-series-pool-party-tickets-1992842126446?aff=oddtdtcreator" target="_blank" rel="noopener"><img src="images/pool-party-flyer.jpg" alt="Titans Softball Pool Party — Saturday July 25, 1–6PM, Wilton Manors FL" class="event-flyer" loading="lazy"></a>
       <div class="event-body">
@@ -541,6 +552,14 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   var count = document.querySelectorAll('.roster .player:not(.player--join)').length;
   var el = document.getElementById('roster-count');
   if (el && count) el.textContent = count;
+})();
+
+// Christmas in July event — auto-removes after 7:00 PM ET on July 22, 2026
+(function(){
+  if (Date.now() >= new Date('2026-07-22T19:00:00-04:00').getTime()) {
+    var ev = document.getElementById('event-xmas-july');
+    if (ev) ev.remove();
+  }
 })();
 
 // Pool Party promo popup — shows once per visit, auto-off after 5:00 PM ET on July 25, 2026
