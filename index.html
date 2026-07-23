@@ -202,7 +202,14 @@ section.wrap{padding-top:64px;padding-bottom:64px}
 .event p{font-size:14px;line-height:1.6;color:var(--steel)}
 .event-price{font-family:'Oswald';font-size:14px;letter-spacing:0.02em;color:var(--chalk);margin-top:14px}
 .event-price b{color:var(--red);font-weight:600}
-.event-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.event-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;align-items:center}
+.rsvp-count{display:inline-flex;align-items:baseline;gap:7px;font-family:'Oswald';font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--steel);margin-left:4px}
+.rsvp-count b{color:var(--red);font-size:22px;line-height:1}
+.rsvp-panel{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.rsvp-panel input{flex:1;min-width:170px;background:#0e0e10;border:1px solid var(--line);color:var(--chalk);padding:12px 14px;font-family:'Inter',sans-serif;font-size:14px}
+.rsvp-panel input:focus{outline:none;border-color:var(--red)}
+.rsvp-done{margin-top:12px;font-family:'Oswald';font-size:15px;letter-spacing:0.04em;color:#3ad17a}
+.btn:disabled{opacity:0.65;cursor:default}
 .btn{display:inline-flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-weight:600;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;padding:12px 20px;cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .15s;border:1px solid transparent}
 .btn:active{transform:translateY(1px)}
 .btn-primary{background:var(--red);color:var(--chalk)}
@@ -338,7 +345,13 @@ footer{border-top:3px solid var(--red);padding:72px 0 40px;margin-top:40px}
         <div class="event-price"><b>Online:</b> $35 regular / $65 VIP &nbsp;&middot;&nbsp; <b>At the door:</b> $40 / $70 VIP</div>
         <div class="event-actions">
           <a href="https://www.eventbrite.com/e/titans-softball-world-series-pool-party-tickets-1992842126446?aff=oddtdtcreator" target="_blank" rel="noopener" class="btn btn-primary">Get tickets</a>
+          <button type="button" class="btn btn-primary" id="rsvp-btn">RSVP Here</button>
           <a href="https://www.paypal.com/ncp/payment/F2DBL9BWCDS2J" target="_blank" rel="noopener" class="btn btn-ghost">Can't make it? Donate</a>
+          <span class="rsvp-count"><b id="rsvp-count">66</b> going</span>
+        </div>
+        <div class="rsvp-panel" id="rsvp-panel" hidden>
+          <input type="text" id="rsvp-name" maxlength="60" placeholder="Your name (optional)" autocomplete="name">
+          <button type="button" class="btn btn-primary" id="rsvp-submit">Count me in</button>
         </div>
       </div>
     </div>
@@ -553,6 +566,32 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
     var ev = document.getElementById('event-xmas-july');
     if (ev) ev.remove();
   }
+})();
+
+// Pool Party RSVP — shared counter via /api/rsvp (starts at 66)
+(function(){
+  var btn=document.getElementById('rsvp-btn');
+  if(!btn) return;
+  var panel=document.getElementById('rsvp-panel'),
+      countEl=document.getElementById('rsvp-count'),
+      nameEl=document.getElementById('rsvp-name'),
+      sub=document.getElementById('rsvp-submit');
+  function setCount(n){ if(typeof n==='number' && n>=66) countEl.textContent=n; }
+  fetch('/api/rsvp').then(function(r){return r.json();}).then(function(d){setCount(d.count);}).catch(function(){});
+  function doneState(){ btn.textContent="You're on the list ✓"; btn.disabled=true; panel.hidden=true; }
+  if(localStorage.getItem('ppRsvp')){ doneState(); }
+  btn.addEventListener('click',function(){ panel.hidden=!panel.hidden; if(!panel.hidden){ nameEl.focus(); } });
+  sub.addEventListener('click',function(){
+    sub.disabled=true; sub.textContent='One sec…';
+    fetch('/api/rsvp',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({name:nameEl.value})})
+      .then(function(r){ if(!r.ok) throw new Error('bad'); return r.json(); })
+      .then(function(d){
+        setCount(d.count); localStorage.setItem('ppRsvp','1'); doneState();
+        var ok=document.createElement('div'); ok.className='rsvp-done'; ok.textContent='See you there! 🌴';
+        panel.parentNode.appendChild(ok);
+      })
+      .catch(function(){ sub.disabled=false; sub.textContent='Count me in'; sub.blur(); alert("Hmm, that didn't go through — please try again."); });
+  });
 })();
 
 // Pool Party promo popup — shows once per visit, auto-off after 5:00 PM ET on July 25, 2026
